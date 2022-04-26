@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+
 namespace C_Sharp_Lesson_3_Homework
 {
     public class Homework
@@ -95,21 +96,23 @@ namespace C_Sharp_Lesson_3_Homework
             }
 
         }
-        public void SortList(List<int> listOfNumbers)
+        public void SortList(IList<int> listOfNumbers)
         {
             //Print to console elements of  listOfNumbers in ascending order
             //your code here
-            listOfNumbers.Sort();
-           
-            listOfNumbers.ForEach(Console.WriteLine);
 
+            do
+            {
+                Console.WriteLine(listOfNumbers.Max());
+                listOfNumbers.Remove(listOfNumbers.Max());
 
-
+            } while (listOfNumbers.Count() != 0);
+            
         }
         public static void Main(String[] args)
         {
             Homework homework = new Homework();
-            List<int> list = new List<int>() { -5, 8, -7, 0, 44, 121, -7 };
+            IList<int> list = new List<int>() { -5, 8, -7, 0, 44, 121, -7 };
             int[,] matrix = new int[3, 3] {
                 { 1,   3,  5},
                 { 2, 3, 5},
